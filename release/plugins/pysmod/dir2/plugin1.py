@@ -1,0 +1,1 @@
+PYSMOD_PLUGIN = True
