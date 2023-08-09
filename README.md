@@ -1,2 +1,2 @@
 # pysmod
-Allows Python scripts to interact with SourceMod API
+This SourceMod extension allows you to write SourceMod plugins using Python.
