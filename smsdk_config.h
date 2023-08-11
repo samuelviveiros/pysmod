@@ -40,7 +40,7 @@
 
 /* Basic information exposed publicly */
 #define SMEXT_CONF_NAME			"PySMod"
-#define SMEXT_CONF_DESCRIPTION	"Allows Python scripts to interact with SourceMod API"
+#define SMEXT_CONF_DESCRIPTION	"Allows you to write SourceMod plugins using Python"
 #define SMEXT_CONF_VERSION		"0.1.0.0"
 #define SMEXT_CONF_AUTHOR		"Dartz8901"
 #define SMEXT_CONF_URL			"https://github.com/samuelviveiros/pysmod"

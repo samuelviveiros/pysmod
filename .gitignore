@@ -19,8 +19,7 @@ mono_crash.*
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-#[Rr]elease/
-Release\ *
+[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
@@ -378,11 +377,11 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# .vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 *.code-workspace
 
 # Local History for Visual Studio Code
@@ -397,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# PySMod
+msvc19/Release\ -\ Left\ 4\ Dead/*
+!msvc19/Release\ -\ Left\ 4\ Dead/pysmod.ext.2.l4d.dll
+msvc19/Release\ -\ Left\ 4\ Dead\ 2/*
+!msvc19/Release\ -\ Left\ 4\ Dead\ 2/pysmod.ext.2.l4d2.dll

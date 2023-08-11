@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:PYTHONHOME}\\include",
+                "${env:SOURCEMOD_1_7_2}\\public",
+                "${env:SOURCEMOD_1_7_2}\\public\\sourcepawn",
+                "${env:SOURCEMOD_1_7_2}\\public\\extensions",
+                "${env:SOURCEMOD_1_7_2}\\public\\amtl",
+                "${env:MMSOURCE_1_11}\\core",
+                "${env:MMSOURCE_1_11}\\core\\sourcehook",
+                "${env:HL2SDKL4D}\\public",
+                "${env:HL2SDKL4D}\\public\\vstdlib",
+                "${env:HL2SDKL4D}\\public\\engine",
+                "${env:HL2SDKL4D}\\public\\tier0",
+                "${env:HL2SDKL4D}\\public\\tier1",
+                "${env:HL2SDKL4D}\\public\\game\\server",
+                "${env:HL2SDKL4D}\\game\\shared"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

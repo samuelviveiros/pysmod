@@ -1,0 +1,150 @@
+//
+// BEFORE USING TASKS:
+//
+// 1. First of all, open the "Developer Command Prompt for VS 2019" (this will setup an environment for building)
+// 2. Change to your project directory. Example: cd "c:\Users\Dartz\Desktop\mods\source\extensions\pysmod"
+// 3. Open that directory in Visual Studio Code: code .
+// 4. Now tasks will work properly!
+//
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "tasks": [
+        {
+            "label": "Build & Deploy :: SM Extension (Release)",
+            "detail": "Clean, compile, link and then copy the library and its autoload file to the game directory",
+            "command": "${workspaceFolder}\\.vscode\\build_n_deploy.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build, Deploy & Run :: SM Extension (Release)",
+            "detail": "Clean, compile, link, copy the library and its autoload file into the game directory and run the game",
+            "command": "${workspaceFolder}\\.vscode\\build_n_deploy_n_run.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build :: SM Extension (Release)",
+            "detail": "Clean, compile and link",
+            "command": "${workspaceFolder}\\.vscode\\build.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean :: SM Extension (Release)",
+            "detail": "Remove out-of-date built files",
+            "command": "${workspaceFolder}\\.vscode\\clean.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile All :: SM Extension (Release)",
+            "detail": "Compile all source files",
+            "command": "${workspaceFolder}\\.vscode\\compile_all.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Link :: SM Extension (Release)",
+            "detail": "Link all object files",
+            "command": "${workspaceFolder}\\.vscode\\link.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Deploy :: SM Extension (Release)",
+            "detail": "Copy the library and its autoload file to the game directory",
+            "command": "${workspaceFolder}\\.vscode\\deploy.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Deploy & Run :: SM Extension (Release)",
+            "detail": "Copy the library and its autoload file and finally run the game",
+            "command": "${workspaceFolder}\\.vscode\\deploy_n_run.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Copy :: SM Extension (Release)",
+            "detail": "Copy the compiled library into the game directory",
+            "command": "${workspaceFolder}\\.vscode\\copy.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate Autoload :: SM Extension (Release)",
+            "detail": "Generate the autoload file in the game directory",
+            "command": "${workspaceFolder}\\.vscode\\autoload.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Game :: SM Extension (Release)",
+            "detail": "Just run the game",
+            "command": "${workspaceFolder}\\.vscode\\run.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile Current :: SM Extension (Release)",
+            "detail": "Compile the currently open file",
+            "command": "${workspaceFolder}\\.vscode\\compile_single.bat",
+            "args": [
+                "${input:configuration}",  // passes the configuration name
+                "${file}"  // passes the current opened file as second parameter
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Undo Deploy :: SM Extension (Release)",
+            "detail": "Remove the library and its autoload file from the game directory",
+            "command": "${workspaceFolder}\\.vscode\\undo_deploy.bat",
+            "args": [
+                "${input:configuration}"
+            ],
+            "problemMatcher": []
+        },
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "configuration",
+            "description": "Select a game configuration...",
+            "options": [
+                "Release - Left 4 Dead",
+                "Release - Left 4 Dead 2",
+            ],
+            "default": "Release - Left 4 Dead"
+        }
+    ]
+}
