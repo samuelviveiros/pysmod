@@ -944,9 +944,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Left 4 Dead|Win32'">
     <ClCompile>
-      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_TF2=9 /D SE_LEFT4DEAD=10 /D SE_NUCLEARDAWN=11 /D SE_LEFT4DEAD2=12 /D SE_ALIENSWARM=13 /D SE_PORTAL2=14 /D SE_CSGO=15 /D SE_DOTA=16</AdditionalOptions>
+      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_TF2=9 /D SE_LEFT4DEAD=10 /D SE_NUCLEARDAWN=11 /D SE_LEFT4DEAD2=12 /D SE_ALIENSWARM=13 /D SE_PORTAL2=14 /D SE_CSGO=15 /D SE_SDK2013=16 /D SE_BMS=17 /D SE_BLADE=18 /D SE_INSURGENCY=19 /D SE_DOI=20 /D SE_CONTAGION=21</AdditionalOptions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>..;$(PYTHONHOME)\include;$(SOURCEMOD_1_7_2)\public;$(SOURCEMOD_1_7_2)\public\sourcepawn;$(SOURCEMOD_1_7_2)\public\extensions;$(SOURCEMOD_1_7_2)\public\amtl;$(MMSOURCE_1_11)\core;$(MMSOURCE_1_11)\core\sourcehook;$(HL2SDKL4D)\public;$(HL2SDKL4D)\public\vstdlib;$(HL2SDKL4D)\public\engine;$(HL2SDKL4D)\public\tier0;$(HL2SDKL4D)\public\tier1;$(HL2SDKL4D)\public\game\server;$(HL2SDKL4D)\game\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;$(PYTHONHOME)\include;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(SOURCEMOD)\public\extensions;$(SOURCEMOD)\public\amtl;$(MMSOURCE)\core;$(MMSOURCE)\core\sourcehook;$(HL2SDKL4D)\public;$(HL2SDKL4D)\public\vstdlib;$(HL2SDKL4D)\public\engine;$(HL2SDKL4D)\public\tier0;$(HL2SDKL4D)\public\tier1;$(HL2SDKL4D)\public\game\server;$(HL2SDKL4D)\game\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=10;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>

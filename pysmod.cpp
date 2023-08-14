@@ -537,6 +537,7 @@ bool CPySMod::Initialize()
     this->m_bIsRunning = true;
     this->PreparePackaging();
     this->m_pPluginManager = new CPyPluginManager;
+    this->logPythonVersion();
 
     return true;
 }
@@ -544,6 +545,17 @@ bool CPySMod::Initialize()
 bool CPySMod::IsRunning()
 {
     return this->m_bIsRunning;
+}
+
+void CPySMod::logPythonVersion()
+{
+    PyObject *pSysModule = PyImport_ImportModule("sys");
+    PyObject *pVersion = PyObject_GetAttrString(pSysModule, "version");
+    char sVersion[256];
+    strncpy(sVersion, PyUnicode_AsUTF8(pVersion), sizeof(sVersion) - 1);
+    g_pSM->LogMessage(myself, "Python version: %s", sVersion);
+    Py_DECREF(pVersion);
+    Py_DECREF(pSysModule);
 }
 
 CPyPluginManager *CPySMod::GetPluginManager()

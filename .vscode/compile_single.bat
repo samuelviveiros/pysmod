@@ -98,5 +98,10 @@ cl.exe ^
     /D SE_ALIENSWARM=13 ^
     /D SE_PORTAL2=14 ^
     /D SE_CSGO=15 ^
-    /D SE_DOTA=16 ^
+    /D SE_SDK2013=16 ^
+    /D SE_BMS=17 ^
+    /D SE_BLADE=18 ^
+    /D SE_INSURGENCY=19 ^
+    /D SE_DOI=20 ^
+    /D SE_CONTAGION=21 ^
     "%sourceFile%"

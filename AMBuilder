@@ -1,11 +1,17 @@
 # vim: set sts=2 ts=8 sw=2 tw=99 et ft=python:
 import os, sys
 
-projectName = 'sample'
+projectName = 'pysmod'
 
 # smsdk_ext.cpp will be automatically added later
 sourceFiles = [
   'extension.cpp',
+  'pysmod.cpp',
+  'pysmod_helpers.cpp',
+  'modules/console.cpp',
+  'modules/files.cpp',
+  'modules/logging.cpp',
+  'modules/sourcemod.cpp',
 ]
 
 ###############
