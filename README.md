@@ -87,3 +87,8 @@ After that, the compilation will work fine.
 ```
 
 Make sure you have selected the correct `Solution Configuration` in the toolbar (a combo box field located right below `Build` and `Debug` menus).
+
+
+### I receive the following error when listing extensions in game: `<FAILED> file "pysmod.ext.2.l4d.dll": The specified module could not be found.`
+
+Before compiling the extension, make sure the `PYTHONHOME` and `Path` environment variables are pointing to the same Python directory.
