@@ -1,13 +1,19 @@
 # PySMod
+
 This SourceMod extension allows you to write plugins using Python.
+
+```
+ATTENTION: This project is not even in alpha version yet (so.. not ready for use in production). For now, it's just me playing around with SM and Python to see how far I can go.
+```
 
 
 ## Which SDKs am I using?
 
 To compile this extension I'am using the following SDKs (these are the versions running on my L4D server):
 
-- sourcemod-1.9.0.6245 ([available here](https://github.com/alliedmodders/sourcemod/commit/50b5bb1))
-- metamod-source-1.10.7-dev: ([available here](https://github.com/alliedmodders/metamod-source/commit/198f723))
+- sourcemod-1.9.0.6245 ([available here](https://github.com/alliedmodders/sourcemod/archive/50b5bb197030ee05a82c9eef3358ebb81229c0e1.zip))
+- metamod-source-1.10.7-dev: ([available here](https://github.com/alliedmodders/metamod-source/archive/198f723750a4091e7c9c86b8f56d1bf12fb41997.zip))
+- hl2sdk-l4d ([available here](https://github.com/alliedmodders/hl2sdk/archive/refs/heads/l4d.zip))
 
 
 ## Source engine macros
