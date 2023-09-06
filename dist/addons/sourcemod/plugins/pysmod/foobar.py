@@ -2,6 +2,8 @@ from sourcemod import console
 from sourcemod import files
 from sourcemod import logging
 
+logging.LogMessage(f'Hello from foobar.py plugin!!!')
+
 PYSMOD_PLUGIN = True
 
 PLUGIN_INFO = {

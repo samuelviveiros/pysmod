@@ -20,7 +20,7 @@ static PyMethodDef ConsoleMethods[] = {
 };
 
 static PyModuleDef ConsoleModule = {
-    PyModuleDef_HEAD_INIT, "console", NULL, -1, ConsoleMethods,
+    PyModuleDef_HEAD_INIT, "sourcemod.console", NULL, -1, ConsoleMethods,
     NULL, NULL, NULL, NULL
 };
 

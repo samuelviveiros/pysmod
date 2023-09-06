@@ -327,11 +327,13 @@ void CPyPluginManager::LoadPlugin(const char *szAbsolutePath, const char *szRela
     // Import Python module (potential plugin).
     PyObject *pName = PyUnicode_DecodeFSDefault(szRawName);
     PyObject *pModule = PyImport_Import(pName);
+    LogPythonErrorIfAny();
     Py_DECREF(pName);
     if (pModule != NULL)
     {
         if (CPyPlugin::IsValid(pModule))  // Module has PYSMOD_PLUGIN attribute?
         {
+            g_pSM->LogMessage(myself, "Plugin loaded: %s", szAbsolutePath);
             CPyPlugin *pPlugin = new CPyPlugin(pModule, szRawName, szAbsolutePath, szRelativePath);
             this->m_plugins.push_back(pPlugin);
         }
@@ -567,21 +569,27 @@ void CPySMod::PreparePackaging()
 {
     // A little hack for packaging.
     // This should be after Py_Inicialize()
+    // TODO: Think a better solution to save pysmod-log.txt file, since right now it's hardcoded
     PyRun_SimpleString(
-        "import importlib.abc\n"
-        "import importlib.machinery\n"
-        "import sys\n"
-        "\n"
-        "\n"
-        "class Finder(importlib.abc.MetaPathFinder):\n"
-        "    def find_spec(self, fullname, path, target=None):\n"
-        "        if fullname in sys.builtin_module_names:\n"
-        "            return importlib.machinery.ModuleSpec(\n"
-        "                fullname,\n"
-        "                importlib.machinery.BuiltinImporter,\n"
-        "            )\n"
-        "\n"
-        "\n"
-        "sys.meta_path.append(Finder())\n"
+        "import traceback\n" \
+        "try:\n" \
+        "    import importlib.abc\n" \
+        "    import importlib.machinery\n" \
+        "    import sys\n" \
+        "\n" \
+        "\n" \
+        "    class PySModFinder(importlib.abc.MetaPathFinder):\n" \
+        "        def find_spec(self, fullname, path, target=None):\n" \
+        "            if fullname in sys.builtin_module_names:\n" \
+        "                return importlib.machinery.ModuleSpec(\n" \
+        "                    fullname,\n" \
+        "                    importlib.machinery.BuiltinImporter,\n" \
+        "                )\n" \
+        "\n" \
+        "\n" \
+        "    sys.meta_path.append(PySModFinder())\n" \
+        "except:\n" \
+        "    with open('/home/dartz/pysmod-log.txt', 'w') as file:\n" \
+        "        file.write(str(traceback.format_exc()))\n"
     );
 }

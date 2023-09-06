@@ -40,7 +40,7 @@ static PyMethodDef FilesMethods[] = {
 };
 
 static PyModuleDef FilesModule = {
-    PyModuleDef_HEAD_INIT, "files", NULL, -1, FilesMethods,
+    PyModuleDef_HEAD_INIT, "sourcemod.files", NULL, -1, FilesMethods,
     NULL, NULL, NULL, NULL
 };
 

@@ -20,6 +20,51 @@ sourceFiles = [
 
 project = Extension.HL2Project(builder, projectName + '.ext')
 
+
+
+
+# TODO: Design a better solution to get Python's include directory
+project.compiler.includes += [
+  os.path.join('/', 'home', 'dartz', '.pyenv', 'versions', '3.11.3', 'include', 'python3.11'),
+]
+
+try:
+  project.compiler.cflags.remove('-Werror')
+except Exception as e:
+  print(f'[-] Could not remove `-Werror` from `CFLAGS`: {str(e)}')
+
+# TODO: Design a better solution to get Python's CFLAGS
+project.compiler.cflags += [
+  '-fpermissive',
+  '-Wno-class-memaccess',
+  '-DNDEBUG',
+  '-g',
+  '-fwrapv',
+  '-O3',
+]
+
+# TODO: Design a better solution to get Python's lib directory
+# TODO: Design a better solution to get Python's linker flags
+project.compiler.linkflags += [
+  '-L/home/dartz/.pyenv/versions/3.11.3/lib',
+  '-lpython3.11',
+  '-lpthread',
+  '-ldl',
+  '-lutil',
+]
+
+# TODO: Why latest SM versions doesn't come with `public/sourcepawn` directory anymore?
+project.compiler.cxxincludes.remove(
+  os.path.join(Extension.sm_root, 'sourcepawn', 'include')
+)
+project.compiler.cxxincludes.append(
+  os.path.join(Extension.sm_root, 'public', 'sourcepawn')
+)
+
+
+
+
+
 if os.path.isfile(os.path.join(builder.currentSourcePath, 'sdk', 'smsdk_ext.cpp')):
   # Use the copy included in the project
   project.sources += [os.path.join('sdk', 'smsdk_ext.cpp')]
@@ -35,3 +80,11 @@ for sdk_name in Extension.sdks:
   binary = Extension.HL2Config(project, projectName + '.ext.' + sdk.ext, sdk)
 
 Extension.extensions = builder.Add(project)
+
+
+
+
+
+print('=====> linkflags:', project.compiler.linkflags)
+print('=====> cflags:', project.compiler.cflags)
+print('=====> cxxincludes:', project.compiler.cxxincludes)

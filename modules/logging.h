@@ -39,7 +39,7 @@ static PyMethodDef LoggingMethods[] = {
 };
 
 static PyModuleDef LoggingModule = {
-    PyModuleDef_HEAD_INIT, "logging", NULL, -1, LoggingMethods,
+    PyModuleDef_HEAD_INIT, "sourcemod.logging", NULL, -1, LoggingMethods,
     NULL, NULL, NULL, NULL
 };
 

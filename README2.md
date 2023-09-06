@@ -1,4 +1,11 @@
-# Como compilar um extensão no Linux
+## TODO
+
+- Incluir as instruções deste arquivo no README principal
+- Descrever o problema de embarcar o interpretador dentro de uma biblioteca compartilhada no Linux e como foi resolvido
+- Incluir instruções de como instalar o Python de 32 bits no Linux e utilizá-lo com a extensão
+
+
+## Como compilar um extensão no Linux
 
 - Instale o Pyenv, Git, Unzip e Wget.
 
@@ -57,7 +64,7 @@ export MMSOURCE=/home/dartz/mods/source/sdk/metamod-source-1.10.7-dev_zombievers
 - Instale o AMBuild:
 
 ```
-cd ~/mods/source/sdk
+cd ~/mods/source/
 git clone https://github.com/alliedmodders/ambuild
 pip install ./ambuild
 ```
@@ -126,3 +133,22 @@ python ../configure.py --sdks l4d --hl2sdk-root /home/dartz/mods/source/sdk --mm
 - Referências:
     - https://wiki.alliedmods.net/Building_SourceMod
     - https://www.youtube.com/watch?v=4eGLLbOumK8
+
+
+## Como compilar um extensão com Python embarcado no Linux
+
+Comando original gerado pelo `ambuild` para compilar (sem linkar) o arquivo `pysmod/modules/sourcemod.cpp`:
+
+```sh
+$ gcc -pipe -fno-strict-aliasing -Wall -Werror -Wno-unused -Wno-switch -Wno-array-bounds -msse -m32 -fvisibility=hidden -Wno-narrowing -Wno-unused-result -mfpmath=sse -g3 -ggdb3 -std=c++11 -fno-exceptions -fno-threadsafe-statics -Wno-non-virtual-dtor -Wno-overloaded-virtual -fvisibility-inlines-hidden -Wno-delete-non-virtual-dtor -Dstricmp=strcasecmp -D_stricmp=strcasecmp -D_snprintf=snprintf -D_vsnprintf=vsnprintf -DHAVE_STDINT_H -DGNUC -D_LINUX -DPOSIX -DSE_EPISODEONE=1 -DSE_ORANGEBOX=3 -DSE_CSS=6 -DSE_HL2DM=7 -DSE_DODS=8 -DSE_SDK2013=9 -DSE_TF2=11 -DSE_LEFT4DEAD=12 -DSE_NUCLEARDAWN=13 -DSE_LEFT4DEAD2=15 -DSE_DARKMESSIAH=2 -DSE_ALIENSWARM=16 -DSE_BLOODYGOODTIME=4 -DSE_EYE=5 -DSE_CSGO=21 -DSE_PORTAL2=17 -DSE_BLADE=18 -DSE_INSURGENCY=19 -DSE_CONTAGION=14 -DSE_BMS=10 -DSE_DOI=20 -DSOURCE_ENGINE=12 -DCOMPILER_GCC -DNO_HOOK_MALLOC -DNO_MALLOC_OVERRIDE -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public -I /home/dartz/mods/source/extensions/pysmod -I /home/dartz/mods/source/extensions/pysmod/sdk -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/extensions -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/sourcepawn -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/amtl/amtl -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/amtl -I /home/dartz/mods/source/sdk/metamod-source-1.10.7-dev_zombieverse/core -I /home/dartz/mods/source/sdk/metamod-source-1.10.7-dev_zombieverse/core/sourcehook -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/engine -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/mathlib -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/vstdlib -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/tier0 -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/tier1 -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/game/server -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/toolframework -I /home/dartz/mods/source/sdk/hl2sdk-l4d/game/shared -I /home/dartz/mods/source/sdk/hl2sdk-l4d/common -H -c /home/dartz/mods/source/extensions/pysmod/modules/sourcemod.cpp -o modules_sourcemod.o
+```
+
+Comando modificado para funcionar com o include do Python:
+
+- Opções removidas: `-Werror`.
+- Opções adicionadas (parte delas vem do `python3.11-config`): `-fpermissive`, `-Wno-class-memaccess`, `-DNDEBUG`, `-g`, `-fwrapv`, `-O3` e `-I /home/dartz/.pyenv/versions/3.11.3/include/python3.11`.
+
+```sh
+$ pyenv shell 3.11.3  # Seta a versão de 32 bits do Python
+$ gcc -fpermissive -Wno-class-memaccess -DNDEBUG -g -fwrapv -O3 -I /home/dartz/.pyenv/versions/3.11.3/include/python3.11 -pipe -fno-strict-aliasing -Wall -Wno-unused -Wno-switch -Wno-array-bounds -msse -m32 -fvisibility=hidden -Wno-narrowing -Wno-unused-result -mfpmath=sse -g3 -ggdb3 -std=c++11 -fno-exceptions -fno-threadsafe-statics -Wno-non-virtual-dtor -Wno-overloaded-virtual -fvisibility-inlines-hidden -Wno-delete-non-virtual-dtor -Dstricmp=strcasecmp -D_stricmp=strcasecmp -D_snprintf=snprintf -D_vsnprintf=vsnprintf -DHAVE_STDINT_H -DGNUC -D_LINUX -DPOSIX -DSE_EPISODEONE=1 -DSE_ORANGEBOX=3 -DSE_CSS=6 -DSE_HL2DM=7 -DSE_DODS=8 -DSE_SDK2013=9 -DSE_TF2=11 -DSE_LEFT4DEAD=12 -DSE_NUCLEARDAWN=13 -DSE_LEFT4DEAD2=15 -DSE_DARKMESSIAH=2 -DSE_ALIENSWARM=16 -DSE_BLOODYGOODTIME=4 -DSE_EYE=5 -DSE_CSGO=21 -DSE_PORTAL2=17 -DSE_BLADE=18 -DSE_INSURGENCY=19 -DSE_CONTAGION=14 -DSE_BMS=10 -DSE_DOI=20 -DSOURCE_ENGINE=12 -DCOMPILER_GCC -DNO_HOOK_MALLOC -DNO_MALLOC_OVERRIDE -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public -I /home/dartz/mods/source/extensions/pysmod -I /home/dartz/mods/source/extensions/pysmod/sdk -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/extensions -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/sourcepawn -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/amtl/amtl -I /home/dartz/mods/source/sdk/sourcemod-1.9.0.6245_zombieverse/public/amtl -I /home/dartz/mods/source/sdk/metamod-source-1.10.7-dev_zombieverse/core -I /home/dartz/mods/source/sdk/metamod-source-1.10.7-dev_zombieverse/core/sourcehook -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/engine -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/mathlib -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/vstdlib -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/tier0 -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/tier1 -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/game/server -I /home/dartz/mods/source/sdk/hl2sdk-l4d/public/toolframework -I /home/dartz/mods/source/sdk/hl2sdk-l4d/game/shared -I /home/dartz/mods/source/sdk/hl2sdk-l4d/common -H -c /home/dartz/mods/source/extensions/pysmod/modules/sourcemod.cpp -o modules_sourcemod.o
+```
