@@ -1,6 +1,6 @@
 SET targetName=%extensionBasename%.ext.2.l4d2
 SET hl2SdkPath=%HL2SDKL4D2%
-SET sourceEngine=12
+SET sourceEngine=15
 SET buildDir=msvc19\Release - Left 4 Dead 2
 
 @REM Deploy-related settings

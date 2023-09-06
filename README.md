@@ -16,35 +16,6 @@ To compile this extension I'am using the following SDKs (these are the versions 
 - hl2sdk-l4d ([available here](https://github.com/alliedmodders/hl2sdk/archive/refs/heads/l4d.zip))
 
 
-## Source engine macros
-
-These are the macros used in SM 1.9. I was able to find them just by searching the source code. You'll notice that not all of them are set in the Solution properties of the `sample_ext` extension that comes with the SM source code.
-
-```
-SE_EPISODEONE=1
-SE_DARKMESSIAH=2
-SE_ORANGEBOX=3
-SE_BLOODYGOODTIME=4
-SE_EYE=5
-SE_CSS=6
-SE_HL2DM=7
-SE_DODS=8
-SE_TF2=9
-SE_LEFT4DEAD=10
-SE_NUCLEARDAWN=11
-SE_LEFT4DEAD2=12
-SE_ALIENSWARM=13
-SE_PORTAL2=14
-SE_CSGO=15
-SE_SDK2013=16
-SE_BMS=17
-SE_BLADE=18
-SE_INSURGENCY=19
-SE_DOI=20
-SE_CONTAGION=21
-```
-
-
 ## About Python
 
 Right now this extension is working on Windows 10 using Python 3.9.13 and 3.11.1 (both 32 bits).

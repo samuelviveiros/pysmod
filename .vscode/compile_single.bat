@@ -91,17 +91,17 @@ cl.exe ^
     /D SE_CSS=6 ^
     /D SE_HL2DM=7 ^
     /D SE_DODS=8 ^
-    /D SE_TF2=9 ^
-    /D SE_LEFT4DEAD=10 ^
-    /D SE_NUCLEARDAWN=11 ^
-    /D SE_LEFT4DEAD2=12 ^
-    /D SE_ALIENSWARM=13 ^
-    /D SE_PORTAL2=14 ^
-    /D SE_CSGO=15 ^
-    /D SE_SDK2013=16 ^
-    /D SE_BMS=17 ^
+    /D SE_SDK2013=9 ^
+    /D SE_BMS=10 ^
+    /D SE_TF2=11 ^
+    /D SE_LEFT4DEAD=12 ^
+    /D SE_NUCLEARDAWN=13 ^
+    /D SE_CONTAGION=14 ^
+    /D SE_LEFT4DEAD2=15 ^
+    /D SE_ALIENSWARM=16 ^
+    /D SE_PORTAL2=17 ^
     /D SE_BLADE=18 ^
     /D SE_INSURGENCY=19 ^
     /D SE_DOI=20 ^
-    /D SE_CONTAGION=21 ^
+    /D SE_CSGO=21 ^
     "%sourceFile%"
