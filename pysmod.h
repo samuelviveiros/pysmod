@@ -93,7 +93,7 @@ public:
 public:
     bool Initialize();
     bool IsRunning();
-    void logPythonVersion();
+    void LogPythonVersion();
     CPyPluginManager *GetPluginManager();
 private:
     bool m_bIsRunning = false;

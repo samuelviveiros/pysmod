@@ -539,7 +539,7 @@ bool CPySMod::Initialize()
     this->m_bIsRunning = true;
     this->PreparePackaging();
     this->m_pPluginManager = new CPyPluginManager;
-    this->logPythonVersion();
+    this->LogPythonVersion();
 
     return true;
 }
@@ -549,7 +549,7 @@ bool CPySMod::IsRunning()
     return this->m_bIsRunning;
 }
 
-void CPySMod::logPythonVersion()
+void CPySMod::LogPythonVersion()
 {
     PyObject *pSysModule = PyImport_ImportModule("sys");
     PyObject *pVersion = PyObject_GetAttrString(pSysModule, "version");
