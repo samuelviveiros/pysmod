@@ -402,5 +402,5 @@ msvc19/Release\ -\ Left\ 4\ Dead/*
 !msvc19/Release\ -\ Left\ 4\ Dead/pysmod.ext.2.l4d.dll
 msvc19/Release\ -\ Left\ 4\ Dead\ 2/*
 !msvc19/Release\ -\ Left\ 4\ Dead\ 2/pysmod.ext.2.l4d2.dll
-build/
-!build/package/
+build/*
+!build/package
