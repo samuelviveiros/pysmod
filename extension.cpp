@@ -47,7 +47,7 @@ SMEXT_LINK(&g_PySModExt);
 CPySMod *g_pPySMod = new CPySMod;
 
 #if defined PLATFORM_LINUX
-void *g_pLibpythonHandle = NULL;
+void *g_pLibPythonHandle = NULL;
 #endif
 
 void OnGameFrame(bool simulating);
@@ -65,8 +65,8 @@ bool PySModExt::SDK_OnLoad(char* error, size_t maxlength, bool late)
     // TODO: Is there a better way to provide the lib name (instead of hardconding it)? What if I want to use a different version of Python?
     // TODO: Do we have to set `LD_LIBRARY_PATH` everytime we want to use "Pyenv's libpython"?
     // TODO: Does it make sense to embed the entire interpreter into our extension? Do we want our plugins accessing third-party libraries like numpy for example?
-    g_pLibpythonHandle = dlopen("libpython3.11.so.1.0", RTLD_LAZY | RTLD_GLOBAL);
-    if (!g_pLibpythonHandle) {
+    g_pLibPythonHandle = dlopen("libpython3.11.so.1.0", RTLD_LAZY | RTLD_GLOBAL);
+    if (!g_pLibPythonHandle) {
         g_pSM->LogError(myself, "Failed loading libpython symbols into global symbol table: %s", dlerror());
         return false;
 	}
@@ -95,8 +95,8 @@ void PySModExt::SDK_OnUnload()
     g_pSM->RemoveGameFrameHook(OnGameFrame);    // ISourceMod
 
 #if defined PLATFORM_LINUX
-    if (g_pLibpythonHandle) {
-        dlclose(g_pLibpythonHandle);
+    if (g_pLibPythonHandle) {
+        dlclose(g_pLibPythonHandle);
 	}
 #endif
 }
