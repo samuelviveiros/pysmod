@@ -916,10 +916,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Left 4 Dead|Win32'">
     <ClCompile>
-      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_TF2=9 /D SE_LEFT4DEAD=10 /D SE_NUCLEARDAWN=11 /D SE_LEFT4DEAD2=12 /D SE_ALIENSWARM=13 /D SE_PORTAL2=14 /D SE_CSGO=15 /D SE_DOTA=16</AdditionalOptions>
+      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_SDK2013=9 /D SE_BMS=10 /D SE_TF2=11 /D SE_LEFT4DEAD=12 /D SE_NUCLEARDAWN=13 /D SE_CONTAGION=14 /D SE_LEFT4DEAD2=15 /D SE_ALIENSWARM=16 /D SE_PORTAL2=17 /D SE_BLADE=18 /D SE_INSURGENCY=19 /D SE_DOI=20 /D SE_CSGO=21</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;$(SOURCEMOD_1_7_2)\public;$(SOURCEMOD_1_7_2)\public\sourcepawn;$(SOURCEMOD_1_7_2)\public\extensions;$(SOURCEMOD_1_7_2)\public\amtl;$(MMSOURCE_1_11)\core;$(MMSOURCE_1_11)\core\sourcehook;$(PYTHONHOME)\include;$(PYTHONHOME)\include;$(HL2SDKL4D)\public;$(HL2SDKL4D)\public\engine;$(HL2SDKL4D)\public\game\server;$(HL2SDKL4D)\public\tier0;$(HL2SDKL4D)\public\tier1;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=8;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;$(PYTHONHOME)\include;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(SOURCEMOD)\public\extensions;$(SOURCEMOD)\public\amtl;$(MMSOURCE)\core;$(MMSOURCE)\core\sourcehook;$(HL2SDKL4D)\public;$(HL2SDKL4D)\public\vstdlib;$(HL2SDKL4D)\public\engine;$(HL2SDKL4D)\public\tier0;$(HL2SDKL4D)\public\tier1;$(HL2SDKL4D)\public\game\server;$(HL2SDKL4D)\game\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=12;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -931,7 +931,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(HL2SDKL4D)\lib\public\tier0.lib;$(HL2SDKL4D)\lib\public\tier1.lib;$(HL2SDKL4D)\lib\public\vstdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(HL2SDKL4D)\lib\public\tier0.lib;$(HL2SDKL4D)\lib\public\tier1.lib;$(HL2SDKL4D)\lib\public\vstdlib.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -939,7 +939,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;$(HL2SDKL4D)\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Left 4 Dead|Win32'">
@@ -972,10 +972,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Left 4 Dead 2|Win32'">
     <ClCompile>
-      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_TF2=9 /D SE_LEFT4DEAD=10 /D SE_NUCLEARDAWN=11 /D SE_LEFT4DEAD2=12 /D SE_ALIENSWARM=13 /D SE_PORTAL2=14 /D SE_CSGO=15 /D SE_DOTA=16</AdditionalOptions>
+      <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_SDK2013=9 /D SE_BMS=10 /D SE_TF2=11 /D SE_LEFT4DEAD=12 /D SE_NUCLEARDAWN=13 /D SE_CONTAGION=14 /D SE_LEFT4DEAD2=15 /D SE_ALIENSWARM=16 /D SE_PORTAL2=17 /D SE_BLADE=18 /D SE_INSURGENCY=19 /D SE_DOI=20 /D SE_CSGO=21</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;$(SOURCEMOD_1_7_2)\public;$(SOURCEMOD_1_7_2)\public\sourcepawn;$(SOURCEMOD_1_7_2)\public\extensions;$(SOURCEMOD_1_7_2)\public\amtl;$(MMSOURCE_1_11)\core;$(MMSOURCE_1_11)\core\sourcehook;$(PYTHONHOME)\include;$(PYTHONHOME)\include;$(HL2SDKL4D2)\public;$(HL2SDKL4D2)\public\engine;$(HL2SDKL4D2)\public\game\server;$(HL2SDKL4D2)\public\tier0;$(HL2SDKL4D2)\public\tier1;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;$(PYTHONHOME)\include;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(SOURCEMOD)\public\extensions;$(SOURCEMOD)\public\amtl;$(MMSOURCE)\core;$(MMSOURCE)\core\sourcehook;$(HL2SDKL4D2)\public;$(HL2SDKL4D2)\public\vstdlib;$(HL2SDKL4D2)\public\engine;$(HL2SDKL4D2)\public\tier0;$(HL2SDKL4D2)\public\tier1;$(HL2SDKL4D2)\public\game\server;$(HL2SDKL4D2)\game\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=15;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -987,7 +987,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(HL2SDKL4D2)\lib\public\tier0.lib;$(HL2SDKL4D2)\lib\public\tier1.lib;$(HL2SDKL4D2)\lib\public\vstdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(HL2SDKL4D2)\lib\public\tier0.lib;$(HL2SDKL4D2)\lib\public\tier1.lib;$(HL2SDKL4D2)\lib\public\vstdlib.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -995,7 +995,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;$(HL2SDKL4D2)\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Alien Swarm|Win32'">
@@ -1030,7 +1030,7 @@
     <ClCompile>
       <AdditionalOptions>/MP /D SE_EPISODEONE=1 /D SE_DARKMESSIAH=2 /D SE_ORANGEBOX=3 /D SE_BLOODYGOODTIME=4 /D SE_EYE=5 /D SE_CSS=6 /D SE_HL2DM=7 /D SE_DODS=8 /D SE_SDK2013=9 /D SE_BMS=10 /D SE_TF2=11 /D SE_LEFT4DEAD=12 /D SE_NUCLEARDAWN=13 /D SE_CONTAGION=14 /D SE_LEFT4DEAD2=15 /D SE_ALIENSWARM=16 /D SE_PORTAL2=17 /D SE_BLADE=18 /D SE_INSURGENCY=19 /D SE_DOI=20 /D SE_CSGO=21</AdditionalOptions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>..;$(SOURCEMOD_1_7_2)\public;$(SOURCEMOD_1_7_2)\public\sourcepawn;$(SOURCEMOD_1_7_2)\public\extensions;$(SOURCEMOD_1_7_2)\public\amtl;$(MMSOURCE_1_11)\core;$(MMSOURCE_1_11)\core\sourcehook;$(PYTHONHOME)\include;$(PYTHONHOME)\include;$(HL2SDKL4D2)\public;$(HL2SDKL4D2)\public\engine;$(HL2SDKL4D2)\public\game\server;$(HL2SDKL4D2)\public\tier0;$(HL2SDKL4D2)\public\tier1;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;$(PYTHONHOME)\include;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(SOURCEMOD)\public\extensions;$(SOURCEMOD)\public\amtl;$(MMSOURCE)\core;$(MMSOURCE)\core\sourcehook;$(HL2SDKL4D2)\public;$(HL2SDKL4D2)\public\vstdlib;$(HL2SDKL4D2)\public\engine;$(HL2SDKL4D2)\public\tier0;$(HL2SDKL4D2)\public\tier1;$(HL2SDKL4D2)\public\game\server;$(HL2SDKL4D2)\game\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;SOURCE_ENGINE=15;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
@@ -1041,7 +1041,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(HL2SDKL4D2)\lib\public\tier0.lib;$(HL2SDKL4D2)\lib\public\tier1.lib;$(HL2SDKL4D2)\lib\public\vstdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(HL2SDKL4D2)\lib\public\tier0.lib;$(HL2SDKL4D2)\lib\public\tier1.lib;$(HL2SDKL4D2)\lib\public\vstdlib.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -1051,7 +1051,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(PYTHONHOME)\libs;$(HL2SDKL4D2)\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Alien Swarm|Win32'">
